@@ -1,0 +1,23 @@
+{
+  "name": "sandbox-three-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w",
+    "develop": "http-server"
+  },
+  "dependencies": {
+    "three": "^0.154.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.3",
+    "@types/three": "^0.154.0",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
