@@ -2,9 +2,18 @@
 
 import Image from 'next/image'
 import styles from './page.module.css'
-import Cube from '@/components/cube'
+import Sphere from '@/components/sphere';
+import React from "react"
+import { OrbitControls, Stats } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { getWindowSize } from '@/utils/getWindowSize';
+import Draggable from '@/components/draggable';
+
 
 export default function Home() {
+
+  const { width, height } = getWindowSize();
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -31,21 +40,29 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-
+      <div style={{width: '100%', height: '60vh'}}>
+        <Canvas
+          camera={{
+            fov: 60,
+            aspect: width / 60,
+            near: 0.1,
+            far: 1000,
+            position: [0, 4, 8]
+          }}
+        >
+          <color attach="background" args={['#1e1e1e']} />
+          <Stats />
+          <Draggable>
+            <Sphere />
+          </Draggable>
+          
+          <OrbitControls attach="orbitControls" />
+          <ambientLight args={[0xffffff]} intensity={0.2} />
+          <axesHelper />
+          <gridHelper position={[0, 0.001, 0]} args={[10, 10, 'red', 'black']} />
+        </Canvas>
         
-      </div>
-
-      <div>
-        <Cube></Cube>
+        
       </div>
 
       <div className={styles.grid}>
