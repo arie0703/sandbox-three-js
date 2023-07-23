@@ -1,23 +1,26 @@
 {
   "name": "sandbox-three-js",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack -w",
-    "develop": "http-server"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "three": "^0.154.0"
+    "@types/node": "20.4.4",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.12",
+    "next": "13.4.12",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "three": "^0.154.0",
+    "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/node": "^20.4.3",
-    "@types/three": "^0.154.0",
-    "ts-loader": "^9.4.4",
-    "typescript": "^5.1.6",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "@types/three": "^0.154.0"
   }
 }
