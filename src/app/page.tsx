@@ -8,6 +8,7 @@ import { OrbitControls, Stats } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { getWindowSize } from '@/utils/getWindowSize';
 import Draggable from '@/components/draggable';
+import Particles from '@/components/particles';
 
 
 export default function Home() {
@@ -63,6 +64,10 @@ export default function Home() {
         </Canvas>
         
         
+      </div>
+
+      <div style={{width: '100%', height: '60vh'}}>
+        <Particles></Particles>
       </div>
 
       <div className={styles.grid}>
